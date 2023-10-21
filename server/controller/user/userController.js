@@ -2,8 +2,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
-const User = require('../models/user/userModel');
-const Role = require('../models/user/roleModel');
+const User = require('../../models/user/userModel');
+const Role = require('../../models/user/roleModel');
 
 const addRole = async (req, res) => {
     try {
@@ -33,7 +33,7 @@ const Signup = async (req, res) => {
             role_id: req.body.role_id
         }).save();
     
-        res.status(201).json({message: 'Sign up success', user})
+        res.status(201).send({message: 'Sign up success', user})
     } catch (error) {
         res.status(400).json(error)
     }
