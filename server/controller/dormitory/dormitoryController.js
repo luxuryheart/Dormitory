@@ -1,0 +1,1 @@
+const Dormitory = require('../../models/dormitory/dormitoryModel')
